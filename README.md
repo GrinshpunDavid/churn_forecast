@@ -14,3 +14,22 @@ The data consists of files obtained from different sources:
 * In each file, the column customerID contains a unique code assigned to each client.
 
 **The contract information is valid as of February 1, 2020.**
+
+### Solution Report:
+a. Steps performed:
+- Exploratory Data Analysis
+- Feature engineering (address class imbalance)
+- train/test/(validation) split
+- Hyperparameter tuning
+- Testing your final model on the test set
+
+b. Difficulties encountered:
+- Data leakage, removed the date and keped only the contract_duration.
+
+c. Key steps:
+- OHE the categorical data
+- Turning yes/no columns to uint8 for faster calculations
+- Fix class imbalance using imblearn.over_sampling and under_sampling
+
+### Results:
+- test 'roc_auc' = 0.93 using "CatBoostClassifier".
